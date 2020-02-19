@@ -7,16 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loginpage.component.css']
 })
 export class LoginpageComponent implements OnInit {
+uname:string;
+psw:string;
 
-submit() {
-  console.log("hi");
-
-}
 
 
   constructor() { }
+  
+submit() {
+localStorage.setItem("name",this.uname)  
+localStorage.setItem("name",this.psw)  
+}
 
   ngOnInit() {
+   // localStorage.setItem("name","anar")
+    
   }
  
 

@@ -9,7 +9,11 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { SimpleModalModule } from 'ngx-simple-modal';
+import { SignupComponent } from './signup/signup.component';
+import {FormsModule} from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
+import { from } from 'rxjs';
 
 
 
@@ -21,6 +25,7 @@ import { SimpleModalModule } from 'ngx-simple-modal';
     LoginpageComponent,
     CartComponent,
     WishlistComponent,
+    SignupComponent,
    
   
 
@@ -29,6 +34,9 @@ import { SimpleModalModule } from 'ngx-simple-modal';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+
   
     
     

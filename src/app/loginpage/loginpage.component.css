@@ -10,8 +10,8 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 #box{
-    float: none;
-    width: 600px;
+  width: 50%;
+  margin: auto;
 }
 
 button {

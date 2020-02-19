@@ -5,6 +5,7 @@ import { ProductsComponent } from './products/products.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CartComponent } from './cart/cart.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path :'login',component:LoginpageComponent},
   {path :'cart',component:CartComponent},
   {path :'wishlist',component:WishlistComponent},
+  {path :'signup',component:SignupComponent},
 
 
 ];

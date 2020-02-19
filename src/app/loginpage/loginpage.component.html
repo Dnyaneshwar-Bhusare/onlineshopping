@@ -1,28 +1,32 @@
 
 
-<div id="box">
+<div id="box" align="center">
 <h2>Login Form</h2>
 
 <form action="/action_page.php" method="post">
-  
+      <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" [(ngModel)]=uname  name="uname" required>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username"  name="uname" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" [(ngModel)]=psw name="psw" required>
+                  
+              <button (click)="submit()">Login</button>
+              <label>
+                <input type="checkbox" checked="checked"  name="remember"> Remember me
+              </label>
+              
+              <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button (click)="submit()">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
+      <div class="container" style="background-color:#f1f1f1">
+              <button routerLink="/signup" class="cancelbtn">Create new Account</button>
+      </div>
 </form>
 </div>
+
+
+
+
+
 
