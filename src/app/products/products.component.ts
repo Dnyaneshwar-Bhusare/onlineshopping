@@ -9,6 +9,7 @@ import { ServiceService } from './../service.service';
 })
 export class ProductsComponent implements OnInit {
 deptId:String;
+items= [{ name: "archie" }, { name: "jake" }, { name: "richard" }];
 
 ProductList;
   constructor(private http: HttpClient, private prservice: ServiceService) { }
