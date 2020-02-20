@@ -7,10 +7,16 @@ import { HttpClient } from '@angular/common/http';
 export class ServiceService {
 
   private urlProductList = "http://localhost:8989/Product_Details/productList";
-  
+  // private urlProductList = "http://192.168.14.86:8989/OnlineShoppingRest/productList";
+
+  private urlUserList = "http://localhost:8989/onlineshoppin/UserList";
   constructor(private http: HttpClient) { }
 
   getProductList(){
     return this.http.get(this.urlProductList);
+  }
+
+  getUserList(){
+    return this.http.get(this.urlUserList);
   }
 }

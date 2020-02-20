@@ -21,7 +21,6 @@ const routes: Routes = [
   {path :'signup',component:SignupComponent},
   {path :'profile', component:ProfileComponent}
 
-
 ];
 
 @NgModule({
@@ -30,5 +29,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const
-RoutingComponent=[ProductsComponent]
+RoutingComponent=[ProductsComponent, ProfileComponent]
 
