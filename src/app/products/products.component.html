@@ -1,4 +1,8 @@
+<<<<<<< HEAD
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+=======
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+>>>>>>> 82133c7c80654879581bd454de9d6514f8bb02a7
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <form>
@@ -78,21 +82,26 @@
         <h2 style="text-align:center">Product Card</h2>
       </b>
        -->
+       <div class="search">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+          placeholder="&#61442;  Search by Name/Number">
+      </div>
+
+
+      
+
 
         <div *ngFor="let product of ProductList;let i = index">
           <div class=product>
           <div class="card">
             <img width="120" height="140"src="https://i.gadgets360cdn.com/products/large/1532351323_635_samsung_galaxy_j8.jpg">
             <div class="overflow">  <h3>{{product.pname}}</h3></div>
-            <h1>{{product.imag}}</h1>>
             <p class="price">${{product.price}}</p>
            <div class="overflow"> <p>{{product.desc}}</p></div>
             <p><button>Add to Cart</button></p>
           </div>
         </div>
         </div>
-      
-
     </div>
     <!-- <div class="options">
 
