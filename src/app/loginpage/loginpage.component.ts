@@ -29,6 +29,4 @@ localStorage.setItem("name",this.psw)
    // localStorage.setItem("name","anar")
     
   }
- 
-
 }
