@@ -8,6 +8,8 @@ export class ServiceService {
 
   private urlProductList = "http://localhost:8989/OnlineShopping/productList";
   // private urlProductList = "http://192.168.14.86:8989/OnlineShoppingRest/productList";
+  //private urlProductList = "http://localhost:8989/Product_Details/productList";
+  // private urlProductList = "http://192.168.14.86:8989/OnlineShoppingRest/productList";
 
   private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
   constructor(private http: HttpClient) { }

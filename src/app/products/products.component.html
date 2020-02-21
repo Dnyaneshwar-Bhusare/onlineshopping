@@ -78,16 +78,26 @@
         <h2 style="text-align:center">Product Card</h2>
       </b>
        -->
-       <div class="search">
+       <!-- <div class="search">
         <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
           placeholder="&#61442;  Search by Name/Number">
+      </div> -->
+
+      <div class="topnav">
+       
+        <a href="#about">Filter</a>
+        <a href="#contact">View By Category</a>
+        <div class="search-container">
+        
+          <div >
+            <input class="search" width="40px" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+              placeholder="&#61442;  Search">
+          </div>
+            <button type="submit"><i class="fa fa-search"></i></button>
+       
+        </div>
       </div>
-
-
-      
-
-
-        <div *ngFor="let product of ProductList;let i = index">
+        <div *ngFor="let product of ProductList | filter:searchText ;let i = index">
           <div class=product>
           <div class="card">
             <img width="120" height="140"src="https://i.gadgets360cdn.com/products/large/1532351323_635_samsung_galaxy_j8.jpg">
