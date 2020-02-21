@@ -16,12 +16,16 @@ psw:string;
   
 submit() {
 
+
+
+  
+  localStorage.setItem("id","1")  
 localStorage.setItem("name",this.psw)  
 }
 
   ngOnInit() {
       
-localStorage.setItem("id","1")  
+
    // localStorage.setItem("name","anar")
     
   }
