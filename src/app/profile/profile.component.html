@@ -1,9 +1,24 @@
-<div>
+<div class="base">
+    <!-- <img src="https://citilab.org.pk/wp-content/uploads/2019/03/bgnew.jpg"> -->
      <div class="profile">
-         
-         <h1>{{UserList.uname}}</h1> 
-         <h1>{{UserList.email}}</h1> 
-         <h1>{{UserList.pwd}}</h1> 
-         <h1>{{UserList.mblNo}}</h1> 
+        <div class="a">
+            <b><label>Customer Name:</label></b>
+            {{UserList.uname}}
+        </div>
+        <div class="a">
+            <b><label>Email:</label></b>
+            {{UserList.email}}
+        </div>
+        <div class="a">
+            <b><label>Mobile No:</label></b>
+            {{UserList.mblNo}}
+        </div>
+        <div class="a">
+            <b><label>Address:</label></b>
+            {{UserList.addrsid}} 
+        </div>
+        <div>
+            <button>Logout</button>
+        </div>
     </div>
 </div>

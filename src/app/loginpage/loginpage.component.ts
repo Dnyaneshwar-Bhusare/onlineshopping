@@ -25,6 +25,4 @@ localStorage.setItem("id","1")
    // localStorage.setItem("name","anar")
     
   }
- 
-
 }

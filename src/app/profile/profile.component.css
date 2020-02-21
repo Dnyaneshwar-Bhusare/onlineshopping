@@ -1,6 +1,30 @@
-.profile{
-    width: 90%;
+.base{
+    width: 100%;
     height: 500px;
-    background-color: blanchedalmond;
-    margin: auto;
+    background-color: lightsteelblue;
 }
+.profile{
+    width: 40%;
+    height: 350px;
+    background-color: white;
+    margin-top: auto;
+    margin: auto;
+    padding-top: 100px;
+}
+.a{
+    font-size: 22px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+label{
+    padding-left: 10px;
+}
+button{
+    width: 100px;
+    height: 27px;
+    margin-top: 20px;
+}
+
+
+
+
