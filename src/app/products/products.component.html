@@ -104,7 +104,7 @@
             <div class="overflow">  <h3>{{product.pname}}</h3></div>
             <p class="price">${{product.price}}</p>
            <div class="overflow"> <p>{{product.desc}}</p></div>
-            <p><button>Add to Cart</button></p>
+            <p><button (click)="addToCart(product.pid)">Add to Cart</button></p>
           </div>
         </div>
         </div>

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {SignupPage} from './signup';
+import { NgForm } from '@angular/forms';
+import { ServiceService } from '../service.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+ signUp : SignupPage= new SignupPage();
+
+  constructor(private http : HttpClient,private router : Router, private service : ServiceService) {}
 
   ngOnInit() {
   }
-
+  onSignup(signup : NgForm){
+    alert(JSON.stringify(this.signUp));
+    this.service.getSignUpData(this.signUp).subscribe(data => {
+      alert("Thanks! your account has been successfully created.");
+    });
+    
+  }
 }
+ 

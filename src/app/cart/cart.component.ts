@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ServiceService } from '../service.service';
+import { ProductsComponent } from '../products/products.component';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  product;
+  cartItems;
+  constructor(private http: HttpClient, private prservice: ServiceService) { }
 
   ngOnInit() {
+  
+   this.cartItems=sessionStorage.getItem("cartItems");
+    
+    this.prservice.getProduct(1).subscribe((data) => {
+      this.product= data;
+      console.log(data)
+    })
+  
   }
+  
 
 }

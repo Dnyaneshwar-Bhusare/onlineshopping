@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import{HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { ServiceService } from './../service.service';
+import { exists } from 'fs';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-products',
@@ -8,32 +10,42 @@ import { ServiceService } from './../service.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-deptId:String;
-items= [{ name: "archie" }, { name: "jake" }, { name: "richard" }];
-
-ProductList;
+  deptId: String;
+  cartItems: any = [];
+  counter: number;
+  alreadyExist: boolean;
+  i: number;
+  ProductList;
   constructor(private http: HttpClient, private prservice: ServiceService) { }
- //name:any;
+  //name:any;
   ngOnInit() {
-  //  this.getDeptList();
-  this.prservice.getProductList().subscribe((data) => {
-    this.ProductList = data;
-    console.log(data)
-  })
+    //  this.getDeptList();
+    this.prservice.getProductList().subscribe((data) => {
+      this.ProductList = data;
+      console.log(data)
+    })
   }
-//   getDeptList(){
-        
-//     var url="http://localhost:8686/Spring130_REST/deptList"
-//     this.http.get(url).subscribe(data=>{
-//         for(let i of data[0]) {
-//             this.deptId=i.deptNm;
-//             alert(i.deptNm);
-
-//         }
-//     })
-
-// }
-
-
+  addToCart(id: number) {
+    this.alreadyExist = false;
+    if (this.cartItems == null) {
+      this.cartItems.push(id)
+      console.log(this.cartItems);
+      alert("Product added to cart");
+    }
+    else {
+      for (var cartItem of this.cartItems) {
+        if (cartItem == id) {
+          this.alreadyExist = true;
+          alert("This Product is already exist in the cart.")
+        }
+      }
+      if (this.alreadyExist == false) {
+        this.cartItems.push(id)
+        console.log(this.cartItems);
+        alert("Product added to cart");
+        sessionStorage.setItem("cartItems",stringify(this.cartItems));
+      }
+    }
+  }
 
 }
