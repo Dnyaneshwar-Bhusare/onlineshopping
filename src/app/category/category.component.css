@@ -1,0 +1,28 @@
+.base{
+    width: 100%;
+    height: 500px;
+    background-color: white;
+}
+.category{
+    width: 27%;
+    height: 500px;
+    background-color:lightseagreen;
+    float: right;
+}
+.products{
+    width: 70%;
+    height: 500px;
+    background-color: lightseagreen;
+    float: left;
+}
+.button{
+    width: 150px;
+    height: 35px;
+    margin-top: 13px;
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 0 7px rgb(82, 80, 80);
+    border: none;
+}
+
+.button:hover {background-color:lightpink}

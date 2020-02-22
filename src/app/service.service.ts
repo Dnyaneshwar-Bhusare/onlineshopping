@@ -12,6 +12,8 @@ export class ServiceService {
   // private urlProductList = "http://192.168.14.86:8989/OnlineShoppingRest/productList";
 
   private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
+
+  private urlCategoryList = "http://localhost:8989/OnlineShopping/CategoryList";
   constructor(private http: HttpClient) { }
 
   getProductList(){
@@ -20,5 +22,9 @@ export class ServiceService {
 
   getUserList(){
     return this.http.get(this.urlUserList);
+  }
+
+  getCategoryList(){
+    return this.http.get(this.urlCategoryList);
   }
 }
