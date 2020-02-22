@@ -1,17 +1,18 @@
 .base{
     width: 100%;
-    height: 500px;
+    height: 600px;
     background-color: white;
+    padding-top: 20px;
 }
 .category{
     width: 27%;
-    height: 500px;
+    height: 600px;
     background-color:lightseagreen;
     float: right;
 }
 .products{
     width: 70%;
-    height: 500px;
+    height: 600px;
     background-color: lightseagreen;
     float: left;
 }

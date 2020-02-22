@@ -1,7 +1,7 @@
 <div class="base">
     <div class="category">
         <div *ngFor="let category of CategoryList">
-            <button class="button">{{category.categoryName}}</button>     
+            <button (click)="secectCategory(category.categoryId)" class="button">{{category.categoryName}}</button>     
         </div>
     </div>
     <div class="products">

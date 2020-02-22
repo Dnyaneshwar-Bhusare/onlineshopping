@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { ServiceService } from './../service.service';
-import { exists } from 'fs';
 import { stringify } from '@angular/compiler/src/util';
 
 @Component({

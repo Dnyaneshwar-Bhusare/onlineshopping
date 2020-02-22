@@ -20,5 +20,9 @@ export class CategoryComponent implements OnInit {
     console.log(data);
     })
   }
+  categoryId(catId:number){
+
+    
+  }
 
 }
