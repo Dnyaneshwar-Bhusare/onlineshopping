@@ -15,14 +15,17 @@ export class LoginpageComponent implements OnInit {
   constructor(private http : HttpClient,private router : Router,private service : ServiceService) { }
   
 submit() {
-localStorage.setItem("name",this.login.psw) 
-alert(JSON.stringify(this.login)); 
-this.service.getLoginData(this.login);
+
+
+
+  
+  localStorage.setItem("id","1")  
+//localStorage.setItem("name",this.psw)  
 }
 
   ngOnInit() {
       
-localStorage.setItem("id","1")  
+
    // localStorage.setItem("name","anar")
     
   }

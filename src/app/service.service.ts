@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SignupPage, User } from './signup/signup';
 import { Login } from './loginpage/loginpage.component';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,12 @@ import { Login } from './loginpage/loginpage.component';
 export class ServiceService {
   user : User = new User;
   private urlProductList = "http://localhost:8989/Product_Details/productList";
+ 
+
+ // private urlProductList = "http://localhost:8989/OnlineShopping/productList";
   // private urlProductList = "http://192.168.14.86:8989/OnlineShoppingRest/productList";
+     private urlProductList = "http://192.168.14.87:8989/OnlineShopping/productList";
+//   private urlProductList = "http://192.168.14.87:8989/OnlineShoppingRest/productList";
 
   private urlUserList = "http://localhost:8989/onlineshoppin/UserList";
 
@@ -17,6 +23,8 @@ export class ServiceService {
 
   private urlLoginData = "http://localhost:8989/Loginn/login";
 
+ // private urlUserList = "http://192.168.14.87:8989/OnlineShopping/UserList";
+  private urlProduct = "http://localhost:8989/OnlineShopping/fetchProduct";
   constructor(private http: HttpClient) { }
 
   getProductList(){
@@ -40,4 +48,9 @@ export class ServiceService {
   getLoginData(login : Login){
     return this.http.post(this.urlLoginData,login);
   }
+  getProduct(productId:number){
+    return this.http.put(this.urlProduct,productId);
+
+  }
+
 }

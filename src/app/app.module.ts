@@ -13,9 +13,11 @@ import { SignupComponent } from './signup/signup.component';
 import {FormsModule} from '@angular/forms'
 import { ServiceService } from './service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { from } from 'rxjs';
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -29,7 +31,8 @@ import { ProfileComponent } from './profile/profile.component';
     WishlistComponent,
     SignupComponent,
     RoutingComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent
    
   
 
@@ -40,6 +43,7 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
 
   
     

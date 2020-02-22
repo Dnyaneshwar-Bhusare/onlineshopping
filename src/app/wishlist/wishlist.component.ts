@@ -11,6 +11,7 @@ name:String;
   constructor() { }
 
   ngOnInit() {
+    
   
     this.name=localStorage.getItem("name");
     if(name=="anar"){
@@ -19,3 +20,4 @@ name:String;
     }
 
 }
+
