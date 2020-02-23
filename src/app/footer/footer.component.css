@@ -178,5 +178,6 @@ footer{
  
 }
 .footerdiv{
-    height: 500px;
+	height: 200px;
+	background-color: rgb(103, 111, 119);
 }

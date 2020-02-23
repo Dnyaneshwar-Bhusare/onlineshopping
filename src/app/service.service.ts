@@ -20,6 +20,7 @@ export class ServiceService {
   private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
 
   private urlSignUpData = "http://192.168.14.87:8989/Loginn/signup";
+ // private urlSignUpData = "http://192.168.14.89:8989/Loginn/signup";
 
   //private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
 
@@ -35,7 +36,7 @@ export class ServiceService {
   }
 
   getUserList(){
-    return this.http.get(this.urlUserList);
+    return this.http.get(this.urlUserList)
   }
 
   getCategoryList(){
