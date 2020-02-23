@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit {
       this.ProductList = data;
       console.log(data)
     })
+    
   }
   addToCart(id: number) {
     this.alreadyExist = false;
@@ -43,7 +44,7 @@ export class ProductsComponent implements OnInit {
         this.cartItems.push(id)
         console.log(this.cartItems);
         alert("Product added to cart");
-        sessionStorage.setItem("cartItems",stringify(this.cartItems));
+        sessionStorage.setItem("cartItems",JSON.stringify(this.cartItems));
       }
     }
   }

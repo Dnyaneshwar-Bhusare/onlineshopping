@@ -17,11 +17,14 @@ export class CartComponent implements OnInit {
   ngOnInit() {
   
    this.cartItems=sessionStorage.getItem("cartItems");
-    
-    this.prservice.getProduct(1).subscribe((data) => {
+    for(var cart of this.cartItems){
+      
+    console.log()
+    this.prservice.getProduct(cart).subscribe((data) => {
       this.product= data;
       console.log(data)
     })
+  }
   
   }
   

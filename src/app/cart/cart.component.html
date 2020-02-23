@@ -1,97 +1,11 @@
-<div class="shopping-cart">
-  <h1>{{cartItems}}</h1>
-  <!-- Title -->
-  <div class="title">
-   
+<div *ngFor="let i of product">
+  <div class=product>
+  <div class="card">
+    <img width="120" height="140"src="https://i.gadgets360cdn.com/products/large/1532351323_635_samsung_galaxy_j8.jpg">
+    <div class="overflow">  <h3>{{i.pname}}</h3></div>
+    <p class="price">${{i.price}}</p>
+   <div class="overflow"> <p>{{i.desc}}</p></div>
+    <p><button (click)="addToCart(i.pid)">Add to Cart</button></p>
   </div>
- 
-  <!-- Product #1 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img id="productimg" src="item-1.png" alt="" />
-    </div>
- 
-    <div class="description">
-      <span>Common Projects</span>
-      <span>Bball High</span>
-      <span>White</span>
-    </div>
- 
-    <div class="quantity">
-      <button class="plus-btn" type="button" name="button">
-        <img src="plus.svg" alt="" />
-      </button>
-      <input type="text" name="name" value="1">
-      <button class="minus-btn" type="button" name="button">
-        <img src="minus.svg" alt="" />
-      </button>
-    </div>
- 
-    <div class="total-price">$549</div>
-  </div>
- 
-  <!-- Product #2 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img id="productimg" src="item-2.png" alt=""/>
-    </div>
- 
-    <div class="description">
-      <span>Maison Margiela</span>
-      <span>Future Sneakers</span>
-      <span>White</span>
-    </div>
- 
-    <div class="quantity">
-      <button class="plus-btn" type="button" name="button">
-        <img src="plus.svg" alt="" />
-      </button>
-      <input type="text" name="name" value="1">
-      <button class="minus-btn" type="button" name="button">
-        <img src="minus.svg" alt="" />
-      </button>
-    </div>
- 
-    <div class="total-price">$870</div>
-  </div>
- 
-  <!-- Product #3 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img id="productimg" src="item-3.png" alt="" />
-    </div>
- 
-    <div class="description">
-      <span>Our Legacy</span>
-      <span>Brushed Scarf</span>
-      <span>Brown</span>
-    </div>
- 
-    <div class="quantity">
-      <button class="plus-btn" type="button" name="button">
-        <img src="plus.svg" alt="" />
-      </button>
-      <input type="text" name="name" value="1">
-      <button class="minus-btn" type="button" name="button">
-        <img src="minus.svg" alt="" />
-      </button>
-    </div>
- 
-    <div class="total-price">$349</div>
-  </div>
+</div>
 </div>

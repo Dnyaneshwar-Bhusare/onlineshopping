@@ -14,6 +14,8 @@ export class ServiceService {
 //   private urlProductList = "http://192.168.14.87:8989/OnlineShoppingRest/productList";
 
   private urlUserList = "http://192.168.14.87:8989/OnlineShopping/UserList";
+
+  private urlstocklist = "http://localhost:8989/OnlineShopping/fetchProduct";
   private urlProduct = "http://localhost:8989/OnlineShopping/fetchProduct";
   constructor(private http: HttpClient) { }
 
@@ -26,6 +28,8 @@ export class ServiceService {
   }
   
   getProduct(productId:number){
+    
+    
     return this.http.put(this.urlProduct,productId);
 
   }
