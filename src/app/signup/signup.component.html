@@ -1,18 +1,48 @@
-
-<form class="modal-content" action="/action_page.php">
+<form #signup="ngForm" (ngSubmit)="onSignup(signup)" class="modal-content">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <label><b>Username</b></label>
+      <input type="text" [(ngModel)]="signUp.username" #username="ngModel" name="username" placeholder="Enter Username" required name="username"
+          pattern="[a-zA-Z0-9]{2,10}$" class="form-control">
+      <div *ngIf="username.touched">
+          <p *ngIf="username.errors?.required">Username is required</p>
+          <p *ngIf="username.errors?.pattern">Username pattern required</p>
+      </div>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label><b>Email</b></label>
+      <input type="text" [(ngModel)]="signUp.email" #email="ngModel" name="email" placeholder="Enter Email" required name="email" 
+         pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" >
+      <div *ngIf="email.touched">
+          <p *ngIf="email.errors?.required">Email is required</p>
+          <p *ngIf="email.errors?.pattern">Email pattern required</p>
+      </div>
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      
+      <label><b>Mobile Number</b></label>
+      <input type="text" [(ngModel)]="signUp.mobno" #mobno="ngModel" name="mobno" placeholder="Enter Mobile Number"  required name="mobno" 
+       pattern="^[1-9]{1}[0-9]{9}$" class="form-control">
+       <div *ngIf="mobno.touched">
+        <p *ngIf="mobno.errors?.required">Mobile number is required</p>
+        <p *ngIf="mobno.errors?.pattern">Mobile number pattern required</p>
+      </div>
+
+     <label><b>Password</b></label>
+      <input type="password" [(ngModel)]="signUp.password" #password="ngModel" name="password" placeholder="Enter Password"  required name="password" 
+       pattern="^(?=.*\d).{4,8}$" class="form-control">
+       <div *ngIf="password.touched">
+        <p *ngIf="password.errors?.required">Password is required</p>
+        <p *ngIf="password.errors?.pattern">Password pattern required</p>
+      </div>
+
+      <label><b>Confirm Password</b></label>
+      <input type="password" [(ngModel)]="signUp.confirmpassword" required validateEqual="password" #confirmpassword="ngModel" name="confirmpassword" placeholder="Confirm Password" required name="confirmpassword" 
+        pattern="^(?=.*\d).{4,8}$" class="form-control">
+        <div *ngIf="confirmpassword.touched">
+          <p *ngIf="confirmpassword.errors?.required">Password is required</p>
+          <p *ngIf="confirmpassword.errors?.pattern">Password pattern required</p>
+        </div>
+
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
@@ -21,7 +51,7 @@
 
       <div class="clearfix">
         <button type="button" class="cancelbtn" routerLink="/login">Sign In</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="submit" [disabled]="signup.invalid" class="signupbtn">Sign Up</button>
       </div>
     </div>
   </form>

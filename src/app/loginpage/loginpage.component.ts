@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,12 +10,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loginpage.component.css']
 })
 export class LoginpageComponent implements OnInit {
-uname:string;
-psw:string;
+  login : Login = new Login;
 
-
-
-  constructor() { }
+  constructor(private http : HttpClient,private router : Router,private service : ServiceService) { }
   
 submit() {
 
@@ -20,7 +20,7 @@ submit() {
 
   
   localStorage.setItem("id","1")  
-localStorage.setItem("name",this.psw)  
+//localStorage.setItem("name",this.psw)  
 }
 
   ngOnInit() {
@@ -29,4 +29,8 @@ localStorage.setItem("name",this.psw)
    // localStorage.setItem("name","anar")
     
   }
+}
+export class Login{
+  uname:string;
+  psw:string;
 }

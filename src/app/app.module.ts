@@ -18,6 +18,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { from } from 'rxjs';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { CategoryComponent } from './category/category.component';
 
 
 
@@ -32,7 +33,8 @@ import { FooterComponent } from './footer/footer.component';
     SignupComponent,
     RoutingComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    CategoryComponent
    
   
 

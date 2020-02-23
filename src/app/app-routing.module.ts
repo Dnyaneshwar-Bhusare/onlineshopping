@@ -7,6 +7,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { CartComponent } from './cart/cart.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CategoryComponent } from './category/category.component';
+import { from } from 'rxjs';
 
 
 
@@ -19,7 +21,8 @@ const routes: Routes = [
   {path :'cart',component:CartComponent},
   {path :'wishlist',component:WishlistComponent},
   {path :'signup',component:SignupComponent},
-  {path :'profile', component:ProfileComponent}
+  {path :'profile', component:ProfileComponent},
+  {path : 'category', component:CategoryComponent}
 
 ];
 
@@ -29,5 +32,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const
-RoutingComponent=[ProductsComponent, ProfileComponent]
+RoutingComponent=[ProductsComponent, ProfileComponent, CategoryComponent]
 
