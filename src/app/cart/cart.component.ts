@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
     for(var cart of this.cartItems){
       
     console.log()
-    this.prservice.getProduct(cart).subscribe((data) => {
+    this.prservice.getProduct(2).subscribe((data) => {
       this.product= data;
       console.log(data)
     })

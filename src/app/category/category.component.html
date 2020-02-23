@@ -1,11 +1,25 @@
 <div class="base">
     <div class="category">
         <div *ngFor="let category of CategoryList">
-            <button class="button">{{category.categoryName}}</button>     
+            <button class="button">{{category.categoryName}}</button>
         </div>
     </div>
     <div class="products">
-
+        <div *ngFor="let product of ProductList | filter:searchText ;let i = index">
+            <div class=product>
+                <div class="card">
+                    <img width="120" height="140"
+                        src="https://i.gadgets360cdn.com/products/large/1532351323_635_samsung_galaxy_j8.jpg">
+                    <div class="overflow">
+                        <h3>{{product.pname}}</h3>
+                    </div>
+                    <p class="price">${{product.price}}</p>
+                    <div class="overflow">
+                        <p>{{product.desc}}</p>
+                    </div>
+                    <p><button (click)="addToCart(product.pid)">Add to Cart</button></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-

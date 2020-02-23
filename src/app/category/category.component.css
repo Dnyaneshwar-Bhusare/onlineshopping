@@ -26,3 +26,37 @@
 }
 
 .button:hover {background-color:lightpink}
+.product{
+    width: 250px;
+    float: left;
+    /* height: 200px; */
+    padding-bottom: 20px;
+    padding-right: 10px;
+  }
+  .overflow{
+    white-space: nowrap; 
+    width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  
+  }
+  .options{
+    float: right;
+    width: 20%;
+    background-color: brown;
+    height: 100%;
+    padding-top: 20px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 250px;  
+    font-family: arial;
+    background-color:lightsteelblue;
+    
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }

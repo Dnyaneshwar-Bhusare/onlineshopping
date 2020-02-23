@@ -17,13 +17,13 @@ export class ServiceService {
      private urlProductList = "http://192.168.14.87:8989/OnlineShopping/productList";
 //   private urlProductList = "http://192.168.14.87:8989/OnlineShoppingRest/productList";
 
-  private urlUserList = "http://localhost:8989/onlineshoppin/UserList";
+  private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
 
-  private urlSignUpData = "http://localhost:8989/Loginn/signup";
+  private urlSignUpData = "http://192.168.14.87:8989/Loginn/signup";
 
   //private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
 
-  private urlCategoryList = "http://localhost:8989/OnlineShopping/CategoryList";
+  private urlCategoryList = "http://192.168.14.87:8989/OnlineShopping/CategoryList";
   private urlLoginData = "http://localhost:8989/Loginn/login";
 
  // private urlUserList = "http://192.168.14.87:8989/OnlineShopping/UserList";
