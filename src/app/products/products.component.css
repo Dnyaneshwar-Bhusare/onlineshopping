@@ -162,10 +162,6 @@ form.example::after {
 
 }
 
-.searchbar{
-  float: left;
-  
-}
 .products{
   
   padding-left: 50px;
@@ -332,7 +328,9 @@ body {
   .slider{
     height: 30px;
   }
-
+.search{
+  padding-right: 50px;
+}
 
 
 

@@ -2,45 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SignupPage, User } from './signup/signup';
 import { Login } from './loginpage/loginpage.component';
-import { stringify } from 'querystring';
+
+import { ConstaintServiceService } from './constaint-service.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
-  user : User = new User;
- // private urlProductList = "http://localhost:8989/Product_Details/productList";
  
+  user:User=new User();
 
- // private urlProductList = "http://localhost:8989/OnlineShopping/productList";
-  // private urlProductList = "http://192.168.14.86:8989/OnlineShoppingRest/productList";
-     private urlProductList = "http://192.168.14.87:8989/OnlineShopping/productList";
-//   private urlProductList = "http://192.168.14.87:8989/OnlineShoppingRest/productList";
+  
 
-  private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
+  constructor(private http: HttpClient,public ConstantService:ConstaintServiceService) { }
 
-  private urlSignUpData = "http://192.168.14.87:8989/Loginn/signup";
- // private urlSignUpData = "http://192.168.14.89:8989/Loginn/signup";
+  private urlLoginData = "/login";
 
-  //private urlUserList = "http://localhost:8989/OnlineShopping/UserList";
-
-  private urlCategoryList = "http://192.168.14.87:8989/OnlineShopping/CategoryList";
-  private urlLoginData = "http://localhost:8989/Loginn/login";
-
- // private urlUserList = "http://192.168.14.87:8989/OnlineShopping/UserList";
-  private urlProduct = "http://localhost:8989/OnlineShopping/fetchProduct";
-  constructor(private http: HttpClient) { }
-
+ 
   getProductList(){
-    return this.http.get(this.urlProductList);
+    return this.http.get(this.ConstantService.API_ENDPOINT+"/productList");
   }
 
   getUserList(){
-    return this.http.get(this.urlUserList)
+    return this.http.get(this.ConstantService.API_ENDPOINT+"/UserList")
   }
 
   getCategoryList(){
-    return this.http.get(this.urlCategoryList);
+    return this.http.get(this.ConstantService.API_ENDPOINT+"/CategoryList");
   }
   
   getSignUpData(signup : SignupPage){
@@ -50,16 +39,23 @@ export class ServiceService {
     this.user.password = signup.password;
     this.user.addrsid = 1;
      alert(JSON.stringify(this.user));
-    return this.http.post(this.urlSignUpData,this.user)
+    return this.http.post(this.ConstantService.API_ENDPOINT+"/signup",this.user)
   }
 
   getLoginData(login : Login){
-    return this.http.post(this.urlLoginData,login);
+    return this.http.post(this.ConstantService.API_ENDPOINT+"/login",login);
   }
   getProduct(productId:number){
     
     
-    return this.http.put(this.urlProduct,productId);
+    return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchProduct",productId);
 
+  }
+  getCartItemListByCartId(cartId:number){
+    return this.http.get(`${this.ConstantService.API_ENDPOINT}/fetchCartItemListByCartId?id=${cartId}`)
+
+  }
+  getCartIdByUserID(userId:number){
+    return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchCartIdByUserId",userId)
   }
 }

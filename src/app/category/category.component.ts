@@ -14,6 +14,7 @@ export class CategoryComponent implements OnInit {
   constructor(private http:HttpClient, private catservice:ServiceService) { }
 
   ngOnInit() {
+
     this.catservice.getProductList().subscribe((data) => {
       this.ProductList = data;
       console.log(data)

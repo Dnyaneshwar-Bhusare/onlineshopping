@@ -4,9 +4,9 @@
       <a routerLink="products"  >Home</a>
       <a  routerLink="wishlist">Wishlist</a>
       <a routerLink="cart">Cart</a>
-      <a routerLink="login">Login</a>
-      <a routerLink="signup">Signup</a>
-      <a routerLink="profile">Profile</a>
+      <div *ngIf="!login" style="display: inline" ><a routerLink="login">Login</a></div>
+      <div *ngIf="!login" style="display: inline" ><a routerLink="signup">Signup</a></div>
+      <div *ngIf="login" style="display: inline"  ><a routerLink="profile">Profile</a></div>
       <a routerLink="category">Category</a>
     </div>
   </div>

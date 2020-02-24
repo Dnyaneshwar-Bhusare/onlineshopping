@@ -1,4 +1,4 @@
-<div class="base">
+<div class="base" *ngIf="UserList">
     <!-- <img src="https://citilab.org.pk/wp-content/uploads/2019/03/bgnew.jpg"> -->
      <div class="profile">
         <div class="a">
@@ -18,7 +18,7 @@
             {{UserList.addrsid}} 
         </div>
         <div>
-            <button>Logout</button>
+            <button (click)="logout()" >Logout</button>
         </div>
     </div>
 </div>

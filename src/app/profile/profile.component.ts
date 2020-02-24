@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from './../service.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +12,7 @@ export class ProfileComponent implements OnInit {
   id:string;
   UserList;
 
-  constructor(private http : HttpClient, private prservice : ServiceService) { }
+  constructor(private http : HttpClient, private prservice : ServiceService,private router : Router) { }
 
   ngOnInit() {
     
@@ -19,7 +20,12 @@ export class ProfileComponent implements OnInit {
     this.prservice.getUserList().subscribe((data) => {
       this.UserList = data[this.id];
 
-      console.log(this.id);
+      console.log(this.UserList);
   })
+}
+logout(){
+  alert("logout")
+  sessionStorage.removeItem("login")
+  this.router.navigate[('products')]
 }
 }
