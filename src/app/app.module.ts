@@ -35,8 +35,6 @@ import { CategoryComponent } from './category/category.component';
     ProfileComponent,
     FooterComponent,
     CategoryComponent
-   
-  
 
     
   ],

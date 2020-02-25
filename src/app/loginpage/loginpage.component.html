@@ -1,42 +1,32 @@
-<div class="base" style="background-image: url('https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg')">
-<div id="box" align="center">
-<h2>Login Form</h2>
+<div class="base"
+  style="background-image: url('https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg')">
+  <div id="box" align="center">
+    <h2>Login Form</h2>
 
-<form #login="ngForm">
+    <form #login="ngForm">
       <div class="container">
-        
         <label><b>Email</b></label>
-        <input type="text" [(ngModel)]="login.email" #email="ngModel" name="email" placeholder="Enter Email" required name="email" 
-           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" >
+        <input type="text" [(ngModel)]="login.email" #email="ngModel" name="email" placeholder="Enter Email" required
+          name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control">
         <div *ngIf="email.touched">
-            <p *ngIf="email.errors?.required">Email is required</p>
-            <p *ngIf="email.errors?.pattern">Email pattern required</p>
+          <p *ngIf="email.errors?.required">Email is required</p>
+          <p *ngIf="email.errors?.pattern">Email pattern required</p>
         </div>
-
         <label><b>Password</b></label>
-        <input type="password" [(ngModel)]="login.password" #password="ngModel" name="password" placeholder="Enter Password"  required name="password" 
-         pattern="^(?=.*\d).{4,8}$" class="form-control">
-         <div *ngIf="password.touched">
+        <input type="password" [(ngModel)]="login.password" #password="ngModel" name="password"
+          placeholder="Enter Password" required name="password" pattern="^(?=.*\d).{4,8}$" class="form-control">
+        <div *ngIf="password.touched">
           <p *ngIf="password.errors?.required">Password is required</p>
           <p *ngIf="password.errors?.pattern">Password pattern required</p>
         </div>
-                  
-              <button (click)="submit(login.email,login.password)" >Login</button>
-              <label>
-                <input type="checkbox" checked="checked"  name="remember"> Remember me
-              </label>
-              
-              <span class="psw">Forgot <a href="#">password?</a></span>
+        <button (click)="submit(login.email,login.password)">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
-
-      <div class="container" >
-              <button routerLink="/signup" class="cancelbtn">Create new Account</button>
+      <div class="container">
+        <button routerLink="/signup" class="cancelbtn">Create new Account</button>
       </div>
-</form>
-</div>
-
-
-
-
-
-
+    </form>
+  </div>

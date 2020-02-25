@@ -24,6 +24,7 @@
     "ng2-search-filter": "^0.5.1",
     "ngx-simple-modal": "^1.4.9",
     "rxjs": "~6.4.0",
+    "sweetalert2": "^9.8.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

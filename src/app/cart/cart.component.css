@@ -4,7 +4,9 @@
   #productimg{
    background-color: aqua;
   }
-   
+ .base{
+   height: 400px;
+ }  
   html,
   body {
     width: 100%;
