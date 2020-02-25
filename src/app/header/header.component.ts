@@ -12,7 +12,7 @@ login:string;
 
   ngOnInit() {
     
-   this.login=sessionStorage.getItem("login");
+   this.login=sessionStorage.getItem("logged");
    
     
   }

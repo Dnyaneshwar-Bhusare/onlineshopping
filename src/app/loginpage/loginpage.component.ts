@@ -31,11 +31,20 @@ export class LoginpageComponent implements OnInit {
     this.pservice.getLoginData(this.login).subscribe((data) => {
       console.log(data);
       if (data != 0) {
-        sessionStorage.setItem("logged", JSON.stringify(data[0].id));
-        this.pservice.getCartIdByUserID(data[0].id)
-          .subscribe((data: { cartId: number, userId: string }) => {
-            this.getCartItemListByCartId(data.cartId);
-          })
+        sessionStorage.setItem("logged", JSON.stringify(data[0].uid));
+        this.pservice.getCartListByUserId(2)
+      .subscribe((data) => {
+        if (data) {
+          console.log(data);
+          localStorage.setItem("usercart", JSON.stringify(data));
+        }
+        this.router.navigate(['/products'])
+        location.reload();
+      })
+        // this.pservice.getCartIdByUserID(data[0].id)
+        //   .subscribe((data: { cartId: number, userId: string }) => {
+        //     this.getCartItemListByCartId(data.cartId);
+        //   })
           this.router.navigate[('products')]
         //  Swal.fire("Welcome User");
       }
@@ -47,14 +56,14 @@ export class LoginpageComponent implements OnInit {
 
   }
 
-  getCartItemListByCartId(cartId: number) {
-    this.pservice.getCartItemListByCartId(cartId)
-      .subscribe((data) => {
-        if (data) {
-          localStorage.setItem("usercart", JSON.stringify(data));
-        }
-        //redirect to home
-      })
+  getCartListByUserId(userId: number) {
+    // this.pservice.getCartListByUserId(userId)
+    //   .subscribe((data) => {
+    //     if (data) {
+    //       localStorage.setItem("usercart", JSON.stringify(data));
+    //     }
+    //     //redirect to home
+    //   })
   }
 }
 export class LoginUser {

@@ -9,24 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  id:number;
-  UserList;
+  userId:number;
+  UserData;
 
   constructor(private http : HttpClient, private prservice : ServiceService,private router : Router) { }
 
   ngOnInit() {
     
   // this.id=localStorage.getItem("id");
-  this.id=2;
+  this.userId=JSON.parse(sessionStorage.getItem("logged"));  
     this.prservice.getUserList().subscribe((data) => {
-      this.UserList = data[this.id];
+      console.log(this.userId);
+      this.UserData = data[this.userId-1];
 
-      console.log(this.UserList);
+      console.log(this.UserData);
   })
 }
 logout(){
   alert("logout")
-  sessionStorage.removeItem("login")
-  this.router.navigate[('products')]
+  sessionStorage.removeItem("logged");
+  localStorage.removeItem("usercart");
+  this.router.navigate(['/products'])
+  location.reload();
 }
 }

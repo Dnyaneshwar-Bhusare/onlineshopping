@@ -51,11 +51,13 @@ export class ServiceService {
     return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchProduct",productId);
 
   }
-  getCartItemListByCartId(cartId:number){
-    return this.http.get(`${this.ConstantService.API_ENDPOINT}/fetchCartItemListByCartId?id=${cartId}`)
+  // get cart from cart details
+  getCartListByUserId(userId:number){
+    return this.http.put("http://192.168.14.87:8989/OnlineShopping/fetchCartTableByUserId",2)
 
   }
-  getCartIdByUserID(userId:number){
-    return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchCartIdByUserId",userId)
-  }
+  //
+  // getCartIdByUserID(userId:number){
+  //   return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchCartIdByUserId",userId)
+  // }
 }
