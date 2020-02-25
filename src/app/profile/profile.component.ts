@@ -30,6 +30,6 @@ logout(){
   sessionStorage.removeItem("logged");
   localStorage.removeItem("usercart");
   this.router.navigate(['/products'])
-  location.reload();
+  
 }
 }

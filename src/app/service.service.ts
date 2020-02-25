@@ -29,7 +29,7 @@ export class ServiceService {
   }
 
   getCategoryList(){
-    return this.http.get(this.ConstantService.API_ENDPOINT+"/CategoryList");
+    return this.http.get(this.ConstantService.API_ENDPOINT+"/categoryList");
   }
   
   getSignUpData(signup : SignupPage){

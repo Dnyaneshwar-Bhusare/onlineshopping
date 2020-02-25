@@ -12,6 +12,7 @@ import { stringify } from '@angular/compiler/src/util';
 })
 export class LoginpageComponent implements OnInit {
   login: LoginUser=new LoginUser();
+  cartproducts:[];
 
   constructor(private http: HttpClient, private router: Router, private pservice: ServiceService) { }
 
@@ -32,14 +33,16 @@ export class LoginpageComponent implements OnInit {
       console.log(data);
       if (data != 0) {
         sessionStorage.setItem("logged", JSON.stringify(data[0].uid));
-        this.pservice.getCartListByUserId(2)
+        this.pservice.getCartListByUserId(data[0].uid)
       .subscribe((data) => {
         if (data) {
           console.log(data);
+
+
           localStorage.setItem("usercart", JSON.stringify(data));
         }
         this.router.navigate(['/products'])
-        location.reload();
+      //  location.reload();
       })
         // this.pservice.getCartIdByUserID(data[0].id)
         //   .subscribe((data: { cartId: number, userId: string }) => {

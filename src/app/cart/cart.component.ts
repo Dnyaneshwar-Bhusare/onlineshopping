@@ -18,9 +18,18 @@ export class CartComponent implements OnInit {
   constructor(private http: HttpClient, private prservice: ServiceService) { }
 
   ngOnInit() {
-   this.cartItem=JSON.parse(localStorage.getItem("usercart")); 
-   
-
+  // this.cartItem=JSON.parse(localStorage.getItem("usercart")); 
+//    for(let product of this.cartItem.length){
+// console.log(1);
+//   //  this.products.push(this.cartItem[product].productId)
+//    }
+    this.cartItem = (localStorage.getItem("usercart"));
+    for (let p of this.cartItem)
+    {
+      console.log(p)
+    }
+   console.log(this.cartItem);
+  console.log(this.cartItem.length);
   }
 
 }
