@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵSWITCH_TEMPLATE_REF_FACTORY__POST_R3__ } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { stringify } from '@angular/compiler/src/util';
   styleUrls: ['./loginpage.component.css']
 })
 export class LoginpageComponent implements OnInit {
-  login: Login = new Login;
+  login: LoginUser=new LoginUser();
 
   constructor(private http: HttpClient, private router: Router, private pservice: ServiceService) { }
 
@@ -23,20 +23,28 @@ export class LoginpageComponent implements OnInit {
 
   }
 
-  submit() {
-    
+  submit(email:string,password:string) {
+    {
+    this.login.email=email;
+    this.login.password=password;
+    }
+    this.pservice.getLoginData(this.login).subscribe((data) => {
+      console.log(data);
+      if (data != 0) {
+        sessionStorage.setItem("logged", JSON.stringify(data[0].id));
+        this.pservice.getCartIdByUserID(data[0].id)
+          .subscribe((data: { cartId: number, userId: string }) => {
+            this.getCartItemListByCartId(data.cartId);
+          })
+          this.router.navigate[('products')]
+        //  Swal.fire("Welcome User");
+      }
+      else {
+        //  Swal.fire("Invalid User");
+      }
+    })
 
 
-
-    alert("login")
- 
-    this.router.navigate[('products')]
-    // sessionStorage.setItem("login",stringify("yes"));
-    //localStorage.setItem("name",this.psw)  
-    this.pservice.getCartIdByUserID(2)
-      .subscribe((data: { cartId: number, userId: string }) => {
-        this.getCartItemListByCartId(data.cartId);
-      })
   }
 
   getCartItemListByCartId(cartId: number) {
@@ -49,7 +57,7 @@ export class LoginpageComponent implements OnInit {
       })
   }
 }
-export class Login {
-  uname: string;
-  psw: string;
+export class LoginUser {
+  email: string;
+  password: string;
 }

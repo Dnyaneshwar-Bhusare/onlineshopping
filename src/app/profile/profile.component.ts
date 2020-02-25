@@ -9,14 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  id:string;
+  id:number;
   UserList;
 
   constructor(private http : HttpClient, private prservice : ServiceService,private router : Router) { }
 
   ngOnInit() {
     
-   this.id=localStorage.getItem("id");
+  // this.id=localStorage.getItem("id");
+  this.id=2;
     this.prservice.getUserList().subscribe((data) => {
       this.UserList = data[this.id];
 

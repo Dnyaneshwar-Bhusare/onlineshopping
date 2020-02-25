@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SignupPage, User } from './signup/signup';
-import { Login } from './loginpage/loginpage.component';
+import { LoginUser } from './loginpage/loginpage.component';
 
 import { ConstaintServiceService } from './constaint-service.service';
 
@@ -25,7 +25,7 @@ export class ServiceService {
   }
 
   getUserList(){
-    return this.http.get(this.ConstantService.API_ENDPOINT+"/UserList")
+    return this.http.get(this.ConstantService.API_ENDPOINT+"/userList")
   }
 
   getCategoryList(){
@@ -42,7 +42,7 @@ export class ServiceService {
     return this.http.post(this.ConstantService.API_ENDPOINT+"/signup",this.user)
   }
 
-  getLoginData(login : Login){
+  getLoginData(login : LoginUser){
     return this.http.post(this.ConstantService.API_ENDPOINT+"/login",login);
   }
   getProduct(productId:number){

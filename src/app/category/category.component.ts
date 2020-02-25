@@ -30,5 +30,8 @@ export class CategoryComponent implements OnInit {
 
     
   }
+  buyProduct(productId:number){
+    
+  }
 
 }
