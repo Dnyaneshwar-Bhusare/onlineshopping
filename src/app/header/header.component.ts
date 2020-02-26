@@ -7,14 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-login:string;
+  login: string;
   constructor() { }
 
   ngOnInit() {
-    
-   this.login=sessionStorage.getItem("logged");
-   
-    
+
+    this.login = sessionStorage.getItem("logged");
+
+
+  }
+  disable() {
+
   }
 
 }

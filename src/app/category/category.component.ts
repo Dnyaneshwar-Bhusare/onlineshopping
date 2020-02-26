@@ -10,7 +10,8 @@ import { ServiceService } from '../service.service';
 export class CategoryComponent implements OnInit {
 
   ProductList;
-  CategoryList;
+  categoryList;
+  searchText:string;
   constructor(private http:HttpClient, private catservice:ServiceService) { }
 
   ngOnInit() {
@@ -21,17 +22,13 @@ export class CategoryComponent implements OnInit {
     })
 
     this.catservice.getCategoryList().subscribe((data) =>{
-   this.CategoryList=data;
+   this.categoryList=data;
   
     console.log(data);
     })
   }
-  categoryId(catId:number){
-
-    
+  selectCategory(categoryName:string){
+    console.log(categoryName);
+    this.searchText=categoryName;
   }
-  buyProduct(productId:number){
-    
-  }
-
 }
