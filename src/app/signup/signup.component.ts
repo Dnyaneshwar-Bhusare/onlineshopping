@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
     alert(JSON.stringify(this.signUp));
     this.service.getSignUpData(this.signUp).subscribe(data => {
       alert("Thanks! your account has been successfully created.");
+      this.router.navigate[('/login')]
     });
     
   }

@@ -4,6 +4,7 @@ import { SignupPage, User } from './signup/signup';
 import { LoginUser } from './loginpage/loginpage.component';
 
 import { ConstaintServiceService } from './constaint-service.service';
+import { OrderDetail } from './orderDetail';
 
 
 @Injectable({
@@ -29,7 +30,7 @@ export class ServiceService {
   }
 
   getCategoryList(){
-    return this.http.get(this.ConstantService.API_ENDPOINT+"/CategoryList");
+    return this.http.get(this.ConstantService.API_ENDPOINT+"/categoryList");
   }
   
   getSignUpData(signup : SignupPage){
@@ -57,5 +58,8 @@ export class ServiceService {
   }
   getCartIdByUserID(userId:number){
     return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchCartIdByUserId",userId)
+  }
+  getOrderDetail(orderDetail: OrderDetail){
+    return this.http.post(this.ConstantService.API_ENDPOINT+"/buyProduct",orderDetail)
   }
 }

@@ -1,11 +1,11 @@
 <div class="base">
     <div class="category">
-        <div *ngFor="let category of CategoryList">
-            <button (click)="secectCategory(category.categoryId)" class="button">{{category.categoryName}}</button>     
+        <div *ngFor="let category of categoryList">
+            <button (click)="secectCategory(category.categoryName)" class="button">{{category.categoryName}}</button>     
         </div>
     </div>
     <div class="products">
-        <div *ngFor="let product of ProductList | filter:searchText ;let i = index">
+        <div *ngFor="let product of productList | filter:searchText ;let i = index">
             <div class=product>
                 <div class="card">
                     <img width="120" height="140"

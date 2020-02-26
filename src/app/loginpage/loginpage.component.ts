@@ -32,6 +32,7 @@ export class LoginpageComponent implements OnInit {
       console.log(data);
       if (data != 0) {
         sessionStorage.setItem("logged", JSON.stringify(data[0].id));
+        
         this.pservice.getCartIdByUserID(data[0].id)
           .subscribe((data: { cartId: number, userId: string }) => {
             this.getCartItemListByCartId(data.cartId);
