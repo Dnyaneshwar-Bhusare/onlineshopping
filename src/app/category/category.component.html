@@ -8,8 +8,7 @@
         <div *ngFor="let product of productList | filter:searchText ;let i = index">
             <div class=product>
                 <div class="card">
-                    <img width="120" height="140"
-                        src="https://i.gadgets360cdn.com/products/large/1532351323_635_samsung_galaxy_j8.jpg">
+                    <img width="120" height="140" src="{{product.image}}">
                     <div class="overflow">
                         <h3>{{product.pname}}</h3>
                     </div>
