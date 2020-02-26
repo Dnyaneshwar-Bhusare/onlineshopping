@@ -4,6 +4,7 @@ import { SignupPage, User } from './signup/signup';
 import { LoginUser } from './loginpage/loginpage.component';
 
 import { ConstaintServiceService } from './constaint-service.service';
+import { OrderDetail } from './orderDetail';
 
 
 @Injectable({
@@ -56,8 +57,10 @@ export class ServiceService {
     return this.http.put("http://192.168.14.87:8989/OnlineShopping/fetchCartTableByUserId",2)
 
   }
-  //
-  // getCartIdByUserID(userId:number){
-  //   return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchCartIdByUserId",userId)
-  // }
+  getCartIdByUserID(userId:number){
+    return this.http.put(this.ConstantService.API_ENDPOINT+"/fetchCartIdByUserId",userId)
+  }
+  getOrderDetail(orderDetail: OrderDetail){
+    return this.http.post(this.ConstantService.API_ENDPOINT+"/buyProduct",orderDetail)
+  }
 }

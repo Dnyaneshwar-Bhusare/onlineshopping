@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit {
   onSignup(signup : NgForm){
     this.service.getSignUpData(this.signUp).subscribe(data => {
       alert("Thanks! your account has been successfully created.");
+      this.router.navigate[('/login')]
     });
     
   }

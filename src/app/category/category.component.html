@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="products">
-        <div *ngFor="let product of ProductList | filter:searchText ;let i = index">
+        <div *ngFor="let product of productList | filter:searchText ;let i = index">
             <div class=product>
                 <div class="card">
                     <img width="120" height="140" src="{{product.image}}">
